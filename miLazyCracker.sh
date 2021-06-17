@@ -48,13 +48,13 @@ TMPFILE_FND="mfc_${myUID}_foundKeys.txt"
 
 if [ -f "$TMPFILE_FND" ]; then
     if [ -f "extended-std.keys" ]; then
-        mfoc -f "$TMPFILE_FND" -f "extended-std.keys" -O "$TMPFILE_MFD"  -D "$TMPFILE_UNK"
+        mfoc -P 100 -T 50 -f "$TMPFILE_FND" -f "extended-std.keys" -O "$TMPFILE_MFD"  -D "$TMPFILE_UNK"
     else
-        mfoc -f "$TMPFILE_FND" -O "$TMPFILE_MFD"  -D "$TMPFILE_UNK"
+        mfoc -P 100 -T 50 -f "$TMPFILE_FND" -O "$TMPFILE_MFD"  -D "$TMPFILE_UNK"
     fi
 else
     if [ -f "extended-std.keys" ]; then
-        mfoc -f "extended-std.keys" -O "$TMPFILE_MFD" -D "$TMPFILE_UNK"
+        mfoc -P 100 -T 50 -f "extended-std.keys" -O "$TMPFILE_MFD" -D "$TMPFILE_UNK"
     else
         mfoc -O "$TMPFILE_MFD" -D "$TMPFILE_UNK"
     fi
